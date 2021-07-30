@@ -1,25 +1,25 @@
 #include <stdio.h>
 
-//Àç±ÍÇÔ¼ö »ç¿ë
+//ì¬ê·€í•¨ìˆ˜ ì‚¬ìš©
 int number = 10;
 int data[10] = { 1,10,5,8,7,6,4,3,2,9 };
 
 void quickSort(int* data, int start, int end) {
-	if (start >= end) { // ¿ø¼Ò°¡ 1°³ÀÎ °æ¿ì
+	if (start >= end) { // ì›ì†Œê°€ 1ê°œì¸ ê²½ìš°
 		return;
 	}
 
 	int key = start; // pivot
-	int i = start + 1; // ¿ŞÂÊ Ãâ¹ß ÁöÁ¡
-	int j = end; // ¿À¸¥ÂÊ Ãâ¹ß ÁöÁ¡
-	int temp; // °ª ±³È¯
+	int i = start + 1; // ì™¼ìª½ ì¶œë°œ ì§€ì 
+	int j = end; // ì˜¤ë¥¸ìª½ ì¶œë°œ ì§€ì 
+	int temp; // ê°’ êµí™˜
 
-	//¿À¸§Â÷¼ø
-	while (i <= j) { // ¾ù°¥¸± ¶§±îÁö 
-		while (data[i] <= data[key]) { // ¿Ş->¿À
+	//ì˜¤ë¦„ì°¨ìˆœ
+	while (i <= j) { // ì—‡ê°ˆë¦´ ë•Œê¹Œì§€ 
+		while (data[i] <= data[key]) { // ì™¼->ì˜¤
 			i++;
 		}
-		while (data[j] >= data[key] && j > start) { // ¿À->¿Ş // key¿Í change µÇ¹Ç·Î ¹üÀ§Á¦ÇÑ
+		while (data[j] >= data[key] && j > start) { // ì˜¤->ì™¼ // keyì™€ change ë˜ë¯€ë¡œ ë²”ìœ„ì œí•œ
 			j--;
 		}
 		if (i > j) {
@@ -35,12 +35,12 @@ void quickSort(int* data, int start, int end) {
 	}
 
 
-	////³»¸²Â÷¼ø
-	//while (i <= j) { // ¾ù°¥¸± ¶§±îÁö 
-	//	while (data[i] >= data[key]) { // ¿Ş->¿À
+	////ë‚´ë¦¼ì°¨ìˆœ
+	//while (i <= j) { // ì—‡ê°ˆë¦´ ë•Œê¹Œì§€ 
+	//	while (data[i] >= data[key]) { // ì™¼->ì˜¤
 	//		i++;
 	//	}
-	//	while (data[j] <= data[key] && j > start) { // ¿À->¿Ş // key¿Í change µÇ¹Ç·Î ¹üÀ§Á¦ÇÑ
+	//	while (data[j] <= data[key] && j > start) { // ì˜¤->ì™¼ // keyì™€ change ë˜ë¯€ë¡œ ë²”ìœ„ì œí•œ
 	//		j--;
 	//	}
 	//	if (i > j) {
@@ -55,8 +55,8 @@ void quickSort(int* data, int start, int end) {
 	//	}
 	//}
 
-	quickSort(data, start, j - 1); // ¿ŞÂÊ
-	quickSort(data, j + 1, end); // ¿À¸¥ÂÊ
+	quickSort(data, start, j - 1); // ì™¼ìª½
+	quickSort(data, j + 1, end); // ì˜¤ë¥¸ìª½
 
 }
 int main() {
